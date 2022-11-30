@@ -4,6 +4,6 @@ FROM ubuntu:20.04
 
 RUN apt-get update
 
-COPY --from=builder /root/.local/bin/app /
+COPY --from=builder /root/.local/bin/docker-debug-exe /app
 
 CMD ["/app"]
