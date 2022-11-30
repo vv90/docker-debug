@@ -6,7 +6,7 @@ RUN stack update
 
 WORKDIR /server
 
-COPY src /server
+COPY src /server/src
 COPY app /server/app
 
 COPY test /server/test
