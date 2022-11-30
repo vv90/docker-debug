@@ -1,0 +1,16 @@
+FROM haskell:9.0.2-buster
+
+RUN apt-get update
+RUN apt-get y install haskell-stack
+RUN stack update
+
+WORKDIR /server
+
+COPY src /server
+COPY app /server/app
+
+COPY test /server/test
+
+COPY Setup.hs stack.yaml stack.yaml.lock server.cabal LICENSE /server/
+
+RUN stack build --copy-bins
