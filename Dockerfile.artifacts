@@ -1,7 +1,7 @@
 FROM haskell:9.0.2-buster
 
 RUN apt-get update
-RUN apt-get y install haskell-stack
+RUN apt-get -y install haskell-stack
 RUN stack update
 
 WORKDIR /server
